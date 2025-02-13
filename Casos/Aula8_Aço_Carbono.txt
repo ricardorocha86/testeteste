@@ -1,0 +1,9 @@
+## Estudo de Caso 
+### Aços baixo e médio carbono
+
+No estudo "Caracterização microestrutural de aços baixo carbono por microscopia de força atômica" publicado na Revista Latinoamericana de Metalurgia y Materiales, Santos et al. (2015) investigaram as propriedades mecânicas de aços de baixo carbono. Através de ensaios de tração, foram obtidas curvas tensão-deformação que permitiram identificar parâmetros como o limite de escoamento, a resistência à tração e a ductilidade dos materiais. A análise dessas curvas é fundamental para compreender o comportamento mecânico dos metais sob diferentes condições de carregamento, auxiliando na seleção adequada de materiais para aplicações específicas na engenharia.(Fonte: https://ve.scielo.org/pdf/rlmm/v35n1/art15.pdf)
+
+Com base no estudo, proponha uma análise comparativa entre as curvas tensão-deformação de aços de baixo carbono e aços de médio carbono. Considere aspectos como limite de escoamento, resistência à tração, ductilidade e as implicações microestruturais que influenciam essas propriedades. Discuta como as diferenças observadas podem afetar a seleção desses materiais em aplicações industriais específicas, levando em conta fatores como custo, desempenho mecânico e processos de fabricação.
+
+**Dificuldade:** Básica   
+**Tipo de resposta:** Direta
