@@ -119,11 +119,9 @@ def GeraExcel(kahoot):
 
     # Carregar o arquivo Excel com openpyxl
     wb = load_workbook(excel_path)
-    st.write('carregou')
     
     # Escolher a planilha ativa (ou usar wb['nome_da_planilha'])
     ws = wb.active
-    st.write('carregou2')
 
     # Definir a linha e a coluna onde começar a escrever
     linha_inicial = 9
@@ -134,11 +132,9 @@ def GeraExcel(kahoot):
         for j, value in enumerate(row):
             # A linha e a coluna começam a partir dos índices definidos
             ws.cell(row=linha_inicial + i, column=coluna_inicial + j, value=value)
-    st.write('carregou3')
 
     # Salvar o arquivo Excel modificado
     wb.save('ExcelKahoot.xlsx')
-    st.write('carregou4')
 
 
 
@@ -148,7 +144,6 @@ conteudo_aula = ler_aula(caminho_aula)
 openai_api_key = st.secrets["OPENAI_API_KEY"]  # Garantir que está usando o segredo
 client = OpenAI(api_key=openai_api_key)  
 # Botão de geração
-st.write('Oie - aqui é um gerador de Kahoot - issso faz assim assim assado ')
 if st.button('✨ Gerar Kahoot', type='primary'):
     kahoot = GeraKahoot(conteudo_aula)
     st.write(kahoot)
