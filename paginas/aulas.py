@@ -67,9 +67,9 @@ dificuldade_selecionada = st.sidebar.selectbox('Selecione a dificuldade dos exer
 
 
 st.divider()
-abas = ['Exercícios AI', 'Lista de Insights AI', 'Comentários']
+abas = ['Exercícios AI', 'Lista de Insights AI']
 
-aba1, aba2, aba3 = st.tabs(abas)
+aba1, aba2 = st.tabs(abas)
 
 with aba1:
     st.header(abas[0]) 
@@ -164,45 +164,4 @@ with aba2:
             # Exibe a resposta em tempo real
             response = st.write_stream(stream)
             
-with aba3:
-    st.header(abas[2])
-
-st.divider()
-# Seção para Comentários
-st.subheader("Oie - Deixe seu Comentário sobre a Aula:")
-
-# Coleta do nome, comentário e nota do aluno
-nome = st.text_input("Seu nome:")
-comentario = st.text_area("Seu comentário:")
-nota = st.slider("Avalie a aula (1 a 5)", 1, 5)
-
-aula_comentarios = aula_selecionada
-
-if st.button("Inserir Comentário"):
-    if nome and comentario:
-        # Aqui você pode salvar os dados em um arquivo CSV ou banco de dados
-        novo_comentario = {"nome": nome, "comentario": comentario, "nota": nota}
-
-        # Exemplo de salvar no arquivo CSV
-        if os.path.exists("comentarios.csv"):
-            comentarios = pd.read_csv("comentarios.csv")
-            # Se novo_comentario for um dicionário, é necessário convertê-lo para DataFrame
-            novo_comentario_df = pd.DataFrame([novo_comentario])  # colocando em uma lista para criação do DataFrame
-            comentarios = pd.concat([comentarios, novo_comentario_df], ignore_index=True)
-            comentarios.to_csv("comentarios.csv", index=False)
-        else:
-            pd.DataFrame([novo_comentario]).to_csv("comentarios.csv", index=False)
-
-        st.success("Comentário postado com sucesso!")
-    else:
-        st.error("Por favor, preencha todos os campos.")
-
-# Exibir os comentários mais recentes
-if os.path.exists("comentarios.csv"):
-    comentarios = pd.read_csv("comentarios.csv")
-    comentarios_ordenados = comentarios.sort_values(by="nota", ascending=False)
-    st.subheader("Comentários Recentes:")
-    for index, row in comentarios_ordenados.iterrows():
-        st.markdown(f"**{row['nome']}** - Nota: {row['nota']}")
-        st.markdown(f"\"{row['comentario']}\"")
-        st.markdown("---")
+ 
